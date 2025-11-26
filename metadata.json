@@ -1,0 +1,5 @@
+{
+  "name": "EcoCalc MVP - Carbon Footprint Calculator",
+  "description": "A comprehensive MVP for calculating carbon footprint (Scope 1, 2, & 3) for citizens and SMBs, featuring multilingual support and visualization.",
+  "requestFramePermissions": []
+}
