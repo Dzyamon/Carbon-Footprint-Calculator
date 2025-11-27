@@ -59,6 +59,24 @@ export interface FAQItem {
   answer: string;
 }
 
+export interface ManualStep {
+  title: string;
+  description: string;
+}
+
+export interface UsageStats {
+  totalCalculations: number;
+  totalEmissions: number;
+  averageEmission: number;
+  lastCalculationAt?: string;
+  lastTotal?: number;
+  scopeAverages: {
+    scope1: number;
+    scope2: number;
+    scope3: number;
+  };
+}
+
 export type TranslationKey = 
   | 'title'
   | 'subtitle'
@@ -102,7 +120,22 @@ export type TranslationKey =
   | 'history_empty'
   | 'faq_title'
   | 'a11y_contrast'
-  | 'a11y_font';
+  | 'a11y_font'
+  | 'project_info_title'
+  | 'project_info_body'
+  | 'hosting_title'
+  | 'hosting_body'
+  | 'support_title'
+  | 'support_body'
+  | 'design_title'
+  | 'design_body'
+  | 'stats_heading'
+  | 'stats_total_calcs'
+  | 'stats_total_emissions'
+  | 'stats_avg_emission'
+  | 'stats_last_calc'
+  | 'manual_heading'
+  | 'manual_intro';
 
 export interface NavItem {
   label: string;

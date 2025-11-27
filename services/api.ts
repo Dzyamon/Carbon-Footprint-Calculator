@@ -1,8 +1,7 @@
-import { CalculatorState, EmissionResult } from '../types';
+import { CalculatorState, EmissionResult, UsageStats } from '../types';
 
-// In Docker/Production, this should be configurable. 
-// For this MVP docker-compose setup, localhost:8000 is exposed to the browser.
-const API_URL = 'http://localhost:8000/api';
+const API_ROOT = (import.meta.env?.VITE_API_URL ?? 'http://localhost:8000').replace(/\/$/, '');
+const API_URL = `${API_ROOT}/api`;
 
 export const api = {
   calculate: async (data: CalculatorState): Promise<EmissionResult> => {
@@ -37,5 +36,13 @@ export const api = {
       console.error("API Error:", error);
       return [];
     }
+  },
+
+  getStats: async (): Promise<UsageStats> => {
+    const response = await fetch(`${API_URL}/stats`);
+    if (!response.ok) {
+      throw new Error('Failed to load stats');
+    }
+    return response.json();
   }
 };
