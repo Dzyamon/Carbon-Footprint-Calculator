@@ -20,7 +20,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/ecocalc
+      - DATABASE_URL=${DATABASE_CREDENTIALS}
     restart: always
 
   db:
