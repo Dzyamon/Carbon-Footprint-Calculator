@@ -28,3 +28,5 @@ docker compose exec db psql -U user -d ecocalc
 \dt
 SELECT id, total, created_at FROM calculations ORDER BY created_at DESC LIMIT 5;
 SELECT * FROM usage_summary;
+
+#
